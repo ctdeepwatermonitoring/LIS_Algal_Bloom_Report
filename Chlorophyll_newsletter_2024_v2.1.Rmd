@@ -281,17 +281,17 @@ bar_plot_data$Basin <- factor(bar_plot_data$Basin, levels = c("Western", "Centra
 
 
 #This one has the lines that show which basin each station falls into but adds a different title at the bottom and changes theme :(
-ggplot(bar_plot_data, aes(x = interaction(Sttn_Nm, Basin), y = Average, fill = Type)) +
+ggplot(bar_plot_data, aes(x = Sttn_Nm, y = Average, fill = Type)) +
   geom_bar(stat = "identity", position = "dodge") +
   scale_fill_manual(values = c("#68CEF2", "#0D2D6C")) +
   labs(
     title = " Averaged Chlorophyll-a Values by Station, January - April 2024",
-    x = "Stations by Basin in LIS",
+    x = "Sample Stations",
     y = "Average Chlorophyll-a (mg/m³)",
     fill = "Data Type") +
   ylim(0,15)+
   theme_light() + 
-  scale_x_discrete(guide = "axis_nested")+
+  # scale_x_discrete(guide = "axis_nested")+
   theme(plot.title = element_text(hjust = 0.5, face = "bold"))
 
 ```
@@ -515,7 +515,7 @@ The phytoplankton species displayed above (Figure 11) are the ten species with t
 
 <!-- [**Interstate Environmental Commision**](https://www.iec-nynjct.org/programs/water/sound-monitoring) -->
 
-<a href="https://longislandsoundstudy.net/"><img src = "images/liss-logo.png"  alt = "LISS Logo" width="110" height="100"></a>
+<a href="https://lispartnership.org/"><img src = "https://lispartnership.org/wp-content/uploads/2025/05/logo_long_island_sound_partnership_color.svg"  alt = "LISP Logo" width="210" height="200"></a>
 
 <!-- [**LIS Partnership**](https://lispartnership.org/) -->
 
